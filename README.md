@@ -1,17 +1,23 @@
 # Intent_URL
 Intent被称为意图，是程序中组件进行交互的一种方式。不仅可以指定当前组件要执行的动作，还可以在不同组件之间进行数据传递。
 根据开启目标组件的方式不同，分为显示意图和隐式意图。
-1）显示意图：直接通过名称开启指定的目标组件通过其构造方法Intent(Context packageContext,Class<?> cls)第一个参数表示当前的Activity对象，一般可用this
-第二个参数表示要启动的目标Activity。
+
+1）显示意图：直接通过名称开启指定的目标组件通过其构造方法Intent(Context packageContext,Class<?> cls)第一个参数表示当前的Activity对象，一般可用this,第二个参数表示要启动的目标Activity。
+
 [例]Intent intent=new Intent(this,Activity02.class);
     startActivity(intent);
+    
 2)隐式意图：通过指定action和category等属性信息，系统根据这些信息进行分析，然后寻找目标Activity。
+
 [例]Intent intent=new Intent();
     //设置action动作，动作要和清单文件中设置一样
     intent.setAction("");
     startActivity(intent);
+    
 实例场景应用（隐式）
+
 主要代码:
+
 MainActivity.java
 package com.example.asus.intent_url;
 
@@ -26,8 +32,6 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button begin_go;
     private EditText et_url;
-   // private String urlHead="https://";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +58,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+
 //自定义网页浏览器
+
 MyWebView.java
 package com.example.asus.intent_url;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -69,7 +74,6 @@ import android.webkit.WebViewClient;
 public class MyWebView extends AppCompatActivity {
     private WebView webView;
     private  String url;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -82,7 +86,6 @@ public class MyWebView extends AppCompatActivity {
         Intent intent=getIntent();
         url=intent.getData().toString();
     }
-
     private void setWebView(){
         WebSettings webSettings=webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -97,8 +100,11 @@ public class MyWebView extends AppCompatActivity {
         });
     }
 }
+
 activity_main.xml
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -107,6 +113,7 @@ activity_main.xml
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
