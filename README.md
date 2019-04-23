@@ -18,20 +18,14 @@ Intent被称为意图，是程序中组件进行交互的一种方式。不仅�
 
 主要代码:
 
-MainActivity.java
-package com.example.asus.intent_url;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+MainActivity.java
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    
     private Button begin_go;
     private EditText et_url;
-    @Override
+    @Override 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -56,20 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
-
-//自定义网页浏览器
-
 MyWebView.java
-package com.example.asus.intent_url;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
-public class MyWebView extends AppCompatActivity {
+public class MyWebView extends AppCompatActivity{   
+
     private WebView webView;
     private  String url;
     @Override
@@ -101,8 +85,8 @@ public class MyWebView extends AppCompatActivity {
 activity_main.xml
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -110,11 +94,13 @@ activity_main.xml
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <LinearLayout
+    
+    <LinearLayout 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <EditText
+	
             android:id="@+id/et_url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,22 +118,25 @@ activity_main.xml
 </LinearLayout>
 myweb.xml
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    
     <WebView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/web_view">
     </WebView>
-
 </android.support.constraint.ConstraintLayout>
+
 AndroidManifest.xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.asus.intent_url">
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
