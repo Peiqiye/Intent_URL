@@ -188,7 +188,7 @@ AndroidManifest.xml
 自定义浏览器
 
 <p align="center">
-	<img src="https://github.com/Peiqiye/image/blob/master/3.png" alt="Sample"  width="350" height="540">
+	<img src="https://github.com/Peiqiye/image/blob/master/intent.png" alt="Sample"  width="350" height="540">
 	<p align="center">
 		<em>访问界面/自定义浏览器</em>
 	</p>
@@ -198,7 +198,7 @@ AndroidManifest.xml
 跳转到百度
 
 <p align="center">
-	<img src="https://github.com/Peiqiye/image/blob/master/3.png" alt="Sample"  width="350" height="540">
+	<img src="https://github.com/Peiqiye/image/blob/master/baidu.png" alt="Sample"  width="350" height="540">
 	<p align="center">
 		<em>百度页面</em>
 	</p>
