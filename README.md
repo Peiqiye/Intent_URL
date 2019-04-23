@@ -28,7 +28,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button begin_go;
     private EditText et_url;
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
     }
-
     private void initView(){
         begin_go=(Button)findViewById(R.id.begin_go);
         et_url=(EditText)findViewById(R.id.et_url);
@@ -90,7 +88,6 @@ public class MyWebView extends AppCompatActivity {
         WebSettings webSettings=webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setSupportZoom(true);
-
         webView.loadUrl(url);
         webView.setWebViewClient(new WebViewClient(){
             public boolean shouldOverrideUrlLoading(WebView view, String url){
@@ -113,13 +110,10 @@ activity_main.xml
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <EditText
             android:id="@+id/et_url"
             android:layout_width="match_parent"
@@ -127,16 +121,13 @@ activity_main.xml
             android:layout_weight="1"
             android:hint="输入网址"
             android:textSize="20sp" />
-
     <Button
         android:id="@+id/begin_go"
         android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="访问" />
-
     </LinearLayout>
-
 
 </LinearLayout>
 myweb.xml
@@ -145,12 +136,10 @@ myweb.xml
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <WebView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/web_view">
-
     </WebView>
 
 </android.support.constraint.ConstraintLayout>
@@ -159,9 +148,7 @@ AndroidManifest.xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.asus.intent_url">
-
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -173,7 +160,6 @@ AndroidManifest.xml
                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".MyWebView">
             <intent-filter >
@@ -181,10 +167,8 @@ AndroidManifest.xml
                   <category android:name="android.intent.category.DEFAULT" />   
                     <category android:name="android.intent.category.BROWSABLE"></category>                
                   <data android:scheme="http"/>
-
             </intent-filter>
         </activity>
-
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 
